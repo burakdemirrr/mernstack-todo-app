@@ -28,6 +28,14 @@ app.post("/insert",async (req,res)=>{
     }
 })
 
+app.get("/read",async (req,res)=>{
+    TaskSchema.find({},(err,result)=>{
+        if(err){
+            res.send(err)
+        }
+        res.send(result);
+    })
+})
 
 
 app.get("/",(req,res)=>{
