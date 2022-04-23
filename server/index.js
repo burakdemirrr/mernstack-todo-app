@@ -15,8 +15,10 @@ app.use(express.json());
 app.use(cors());
 
 
-app.get("/",async (req,res)=>{
-    const newTask=TaskSchema({task:"qwe",days:15});
+app.post("/insert",async (req,res)=>{
+    const gorev=req.body.task;
+    const days=req.body.days;
+    const newTask=TaskSchema({task:gorev,days:days});
     try{
         await newTask.save();
         res.send("yess")
