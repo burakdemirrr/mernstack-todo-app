@@ -5,7 +5,7 @@ function App() {
 
   const [giris,setGiris]=useState({
     task:"",
-    days:0,
+    days:null,
   });
   const [list,setList]=useState([]);
 
@@ -30,22 +30,22 @@ function App() {
 
   return (
     <div className="App">
-      <h1>To-Do App</h1>
+      <div className="box">
+      <h1>Tasks</h1>
 
       <div className="">
         <input type="text" placeholder="Enter your task" name="task" value={giris.task} onChange={(e)=>handleInputs(e)}/>
-        <input type="text" placeholder="How many days remained?" name="days"  value={giris.days} onChange={(e)=>handleInputs(e)}  />
-      
+        <input type="text" placeholder="How many days remained?" name="days" value={giris.days} onChange={(e)=>handleInputs(e)}  />
         <button onClick={onSubmit}>+</button>
+
+
       </div>
-
-
       {list && list.map((item)=>(
-        <div className="" key={item._id}>
+        <div className="details" key={item._id}>
           <p>{item.days}</p>
           <p>{item.task}</p>
         </div>
-      ))}
+      ))}</div>
 
     </div>
   );
