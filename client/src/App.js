@@ -27,6 +27,11 @@ function App() {
     })
   },[]);
 
+  const handleDelete=(id)=>{
+    axios.delete(`http://localhost:3001/delete${id}`)
+
+  }
+
 
   return (
     <div className="App">
@@ -41,7 +46,7 @@ function App() {
         <div className="details" key={item._id}>
           <p>{item.task}</p>
           <div className="">
-          <button className="delete"><BsFillTrashFill/></button>
+          <button className="delete" onClick={()=>handleDelete(tasks._id)}><BsFillTrashFill/></button>
           <button className="edit"><FiEdit2/></button></div>
         </div>
       ))}</div></div>
