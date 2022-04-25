@@ -1,6 +1,9 @@
 import axios from "axios"
 import './App.css';
 import {useState,useEffect} from "react";
+import {BsFillTrashFill} from "react-icons/bs";
+import {FiEdit2} from "react-icons/fi";
+
 function App() {
 
   const [giris,setGiris]=useState({
@@ -31,13 +34,17 @@ function App() {
       <h1>Tasks</h1>
       <div className="">
         <input type="text" placeholder="Enter your task" name="task" value={giris.task} onChange={(e)=>handleInputs(e)}/>
-        <button onClick={onSubmit}>+</button>
+        <button className="add" onClick={onSubmit}>+</button>
       </div>
+      <div className="inside">
       {list && list.map((item)=>(
         <div className="details" key={item._id}>
           <p>{item.task}</p>
+          <div className="">
+          <button className="delete"><BsFillTrashFill/></button>
+          <button className="edit"><FiEdit2/></button></div>
         </div>
-      ))}</div>
+      ))}</div></div>
 
     </div>
   );
