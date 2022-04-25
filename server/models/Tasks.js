@@ -8,7 +8,7 @@ const TaskSchema=mongoose.Schema({
         required:true
     },
     days:{
-        type:Number,
+        type:String,
         required:true,
     }
 })
