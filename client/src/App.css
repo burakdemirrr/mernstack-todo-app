@@ -32,6 +32,7 @@
 .inside{
   padding:0 30px;
   padding-left: 48px;
+  max-height: 50vh;
 }
 input{
   margin:20px;
@@ -63,6 +64,10 @@ body{
   box-shadow:  14px 14px 42px #b0a6c4,
   -24px -24px 42px #ffffff;
   padding:20px;
+  overflow: scroll;
+}
+::-webkit-scrollbar{
+  display: none;
 }
 .add {
   padding: 9px 25px;
