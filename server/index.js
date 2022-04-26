@@ -37,6 +37,14 @@ app.get("/read",async (req,res)=>{
     })
 })
 
+app.delete("/delete/:id",async(req,res)=>{
+    const id=req.params.id;
+
+    await TaskSchema.findByIdAndRemove(id).exec();
+    res.send("delete");
+
+})
+
 
 app.get("/",(req,res)=>{
     res.send("tabi efendim");
